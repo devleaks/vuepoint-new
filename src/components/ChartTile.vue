@@ -2,6 +2,8 @@
     <tile :position="position" :heading="heading" :color="color">
         <bar-chart class="chart" :data="data" :options="options" v-if="type == 'bar'"></bar-chart>
         <line-chart class="chart" :data="data" :options="options" v-if="type == 'line'"></line-chart>
+        <update-data-chart class="chart" :data="data" :options="options"                    v-if="type == 'update-data'"></update-data-chart>
+        <update-prop-chart class="chart" :data="data" :options="options" :chart-data="data" v-if="type == 'update-prop'"></update-prop-chart>
         <doughnut-chart class="chart" :data="data" :options="options" v-if="type == 'doughnut'"></doughnut-chart>
     </tile>
 </template>
@@ -10,6 +12,8 @@
     import Tile from './atoms/Tile';
     import BarChart from './charts/BarChart'
     import LineChart from './charts/LineChart'
+    import UpdateDataChart from './charts/UpdateDataChart'
+    import UpdatePropChart from './charts/UpdatePropChart'
     import DoughnutChart from './charts/DoughnutChart'
 
     export default {
@@ -20,6 +24,8 @@
             Tile,
             BarChart,
             LineChart,
+            UpdateDataChart,
+            UpdatePropChart,
             DoughnutChart
         },
 
