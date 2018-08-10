@@ -2,7 +2,8 @@
 
 This is a "fork" of [vuepoint](https://github.com/mattbrailsford/vuepoint).
 
-I created a new project with vue cli 3, copied the source from vuepoint, adjusted a few path and got it to compile.
+I created a new project with vue cli 3, copied the source from vuepoint, adjusted a few relative paths and got it to compile.
+
 
 I'm trying to live update charts with vue-chartjs reactive data and prop.
 
