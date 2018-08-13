@@ -2,36 +2,44 @@
     <tile :position="position" :heading="heading" :color="color">
         <bar-chart class="chart" :data="data" :options="options" v-if="type == 'bar'"></bar-chart>
         <line-chart class="chart" :data="data" :options="options" v-if="type == 'line'"></line-chart>
-        <update-data-chart class="chart" :data="data" :options="options"                    v-if="type == 'update-data'"></update-data-chart>
-        <update-prop-chart class="chart" :data="data" :options="options" :chart-data="data" v-if="type == 'update-prop'"></update-prop-chart>
+        <update-prop-chart class="chart" :data="data" :options="options"  :chart-data="localData" v-if="type == 'update-prop'"></update-prop-chart>
         <doughnut-chart class="chart" :data="data" :options="options" v-if="type == 'doughnut'"></doughnut-chart>
     </tile>
 </template>
 
 <script>
-    import Tile from './atoms/Tile';
-    import BarChart from './charts/BarChart'
-    import LineChart from './charts/LineChart'
-    import UpdateDataChart from './charts/UpdateDataChart'
-    import UpdatePropChart from './charts/UpdatePropChart'
-    import DoughnutChart from './charts/DoughnutChart'
+import Tile from './atoms/Tile';
+import BarChart from './charts/BarChart'
+import LineChart from './charts/LineChart'
+import UpdatePropChart from './charts/UpdatePropChart'
+import DoughnutChart from './charts/DoughnutChart'
 
-    export default {
+export default {
 
-        extends: Tile,
+    extends: Tile,
 
-        components: {
-            Tile,
-            BarChart,
-            LineChart,
-            UpdateDataChart,
-            UpdatePropChart,
-            DoughnutChart
-        },
+    components: {
+        Tile,
+        BarChart,
+        LineChart,
+        UpdatePropChart,
+        DoughnutChart
+    },
 
-        props: ['data', 'options', 'type']
+    props: ['data', 'options', 'type'],
 
-    };
+    data: function() {
+        return {
+            localData: {}
+        };
+    },
+
+    watch: {
+        data: function() {
+            this.localData = this.data;
+        }
+    }
+}
 </script>
 
 <style lang="scss">
