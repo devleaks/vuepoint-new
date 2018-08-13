@@ -37,8 +37,7 @@
         </value-tile>
         <chart-tile position="i3:j5" :data="chartData3" type="doughnut"></chart-tile>
 
-        <chart-tile position="a6:b8" heading="Live Data Chart" color="orange" type="update-data"></chart-tile>
-        <chart-tile position="c6:d8" heading="Live Prop Chart" color="yellow" :data="chartData1" type="update-prop"></chart-tile>
+        <chart-tile position="a6:d8" heading="Live Prop Chart" color="green" :data="chartData1" type="update-prop"></chart-tile>
         <chart-tile position="e6:g8" heading="Something" color="red" :data="chartData1" type="bar"></chart-tile>
         <chart-tile position="h6:j8" heading="Something" color="blue" :data="chartData1" type="line"></chart-tile>
 

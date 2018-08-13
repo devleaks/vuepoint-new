@@ -9,8 +9,6 @@ export default {
 
   mixins: [reactiveProp],
 
-  props: ['data'],
-
   data: () => ({
     options: {
       responsive: true,
