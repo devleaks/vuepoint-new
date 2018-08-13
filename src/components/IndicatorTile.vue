@@ -20,11 +20,17 @@
         },
 
         props: {
+            before: {
+                type: String
+            },
             value: {
                 type: Boolean,
                 default: false
             },
             label: {
+                type: String
+            },
+            after: {
                 type: String
             }
         },
